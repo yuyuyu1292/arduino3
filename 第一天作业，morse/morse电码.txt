@@ -1,0 +1,69 @@
+void setup()
+{
+  pinMode(4,OUTPUT);
+  pinMode(5,OUTPUT);
+  Serial.begin(9600);
+}
+
+int income=0;
+
+void loop()
+{ 
+
+  income=Serial.read();
+    
+ switch(income)
+{
+  case 97:dot();dash();delay(100);break;
+  case 98:dash();dot();dot();delay(100);break;
+  case 99:dash();dot();dash();dot();delay(100);break;
+  
+  case 100:dash();dot();dot();delay(100);break;
+  case 101:dot();delay(3000);break;
+  case 102:dot();dot();dash();dot();delay(100);break;
+ 
+  case 103:dash();dash();dot();delay(100);break;
+  case 104:dot();dot();dot();dot();delay(100);break;
+  case 105:dot();dot();delay(100);break;
+
+  case 106:dot();dash();dash();dash();delay(100);break;
+  case 107:dash();dot();dash();delay(100);break;
+  case 108:dot();dash();dot();dot();delay(100);break;
+
+  case 109:dash();dash();delay(100);break;
+  case 110:dash();dot();delay(100);break;
+  case 111:dash();dash();dash();delay(100);break;
+  case 112:dot();dash();dash();dot();delay(100);break;
+  case 113:dash();dash();dot();dash();delay(100);break;
+  case 114:dot();dash();dot();delay(100);break;
+  case 115:dot();dot();dot();delay(100);break;
+
+  case 116:dash();delay(3000);break;
+  case 117:dot();dot();dash();delay(100);break;
+  case 118:dot();dot();dot();dash();delay(100);break;
+  case 119:dot();dash();dash();delay(100);break;
+  case 120:dash();dot();dot();dash();delay(100);break;
+  case 121:dash();dot();dash();dash();delay(100);break;
+  case 122:dash();dash();dot();dot();delay(100);break;
+
+  case 32:dash();dash();dot();dot();dash();dash();delay(100);break;
+  case 13:dot();dot();dash();dash();dot();dot();delay(100);break;
+  }
+
+}
+
+void dot()
+{  
+ digitalWrite(4, HIGH);
+ delay(25);  
+ digitalWrite(5, LOW);   
+ delay(25); 
+} 
+
+void dash() 
+{   
+  digitalWrite(4, HIGH);  
+  delay(100);  
+  digitalWrite(5, LOW);   
+  delay(25);
+} 
